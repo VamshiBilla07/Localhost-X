@@ -5,18 +5,18 @@
   "installCommand": "npm install && cd backend && npm install && cd ../frontend && npm install --legacy-peer-deps",
   "builds": [
     {
-      "src": "backend/src/index.ts",
+      "src": "api/index.ts",
       "use": "@vercel/node"
     }
   ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/backend/src/index.ts"
+      "destination": "/api/index.ts"
     },
     {
       "source": "/health",
-      "destination": "/backend/src/index.ts"
+      "destination": "/api/index.ts"
     }
   ]
 }
