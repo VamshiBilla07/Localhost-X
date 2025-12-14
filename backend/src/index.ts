@@ -123,7 +123,13 @@ app.patch("/api/issues/:id/status", (req: Request, res: Response) => {
   return res.json({ issue });
 });
 
-app.listen(PORT, () => {
-  // Lightweight logging for hackathon use.
-  console.log(`API listening on port ${PORT}`);
-});
+// Only start server if not running in serverless environment (Vercel)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    // Lightweight logging for hackathon use.
+    console.log(`API listening on port ${PORT}`);
+  });
+}
+
+// Export for Vercel serverless
+export default app;
