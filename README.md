@@ -1,4 +1,4 @@
-# 📍 Community Issue Reporter
+# 📍 Community Issue Reporter.
 
 A full-stack MERN application that helps communities report and track local issues like potholes, broken streetlights, safety hazards, illegal dumping, and more. 
 
